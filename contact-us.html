@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Add Your favicon here -->
+    <!--<link rel="icon" href="img/favicon.ico">-->
+
+    <title>WIA</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Animation CSS -->
+    <link href="css/animate.min.css" rel="stylesheet">
+
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/header-footer.js"></script>
+    <script>
+
+        function validateForm() {
+            var valid = 0;
+            var email = document.getElementById("email");
+            var name = document.getElementById("name");
+            var message = document.getElementById("message");
+            var phone = document.getElementById("phone");
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+            if (name.value == "") {
+                valid = 1;
+                name.placeHolder = "Name Cannot be empty";
+                name.style.backgroundColor = "#FFDFDF";
+                alert("Name Cannot be empty");
+                return false;
+
+            } else {
+                name.style.backgroundColor = "transparent";
+            }
+
+
+            if (email.value == "") {
+                valid = 0;
+                email.placeHolder = "Email cannot be empty";
+                email.style.backgroundColor = "#FFDFDF";
+                alert("Email Cannot be empty");
+                return false;
+            } else {
+                email.style.backgroundColor = "transparent";
+            }
+
+            if (phone.value == "") {
+                valid = 0;
+                phone.placeHolder = "Phone cannot be empty";
+                phone.style.backgroundColor = "#FFDFDF";
+                alert("Phone Cannot be empty");
+                return false;
+            } else {
+                phone.style.backgroundColor = "transparent";
+            }
+
+            if (message.value == "") {
+                valid = 0;
+                message.placeHolder.value = "Message Cannot be empty";
+                message.style.backgroundColor = "#FFDFDF";
+                alert("Message Cannot be empty");
+                return false;
+            } else {
+                message.style.backgroundColor = "transparent";
+            }
+
+            if(!filter.test(email.value)) {
+                valid = 0;
+                email.placeHolder = "Invalid email address";
+                email.style.backgroundColor = "#FFDFDF";
+            } else {
+                email.style.backgroundColor = "transparent";
+            }
+            if (!valid)
+                return false;
+        }
+    </script>
+
+</head>
+<body id="page-top">
+<div id="mobile-header"></div><!--Mobile Header Included-->
+<div id="header"></div><!--Header Included-->
+
+
+<section class="container">
+    <div class="container col-md-12 text-center">
+        <div class="navy-line"></div>
+        <h1>Contact Us</h1>
+        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod.</p>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <form action="" class="form-horizontal bv-form"  id="contactForm" method="post" name="contactForm" onsubmit="return validateForm()">
+            <!--<button class="bv-hidden-submit" style="display: none; width: 0px; height: 0px;" type="submit"></button>-->
+            <fieldset class="col-sm-12">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="fa fa-user fa-fw"></i>
+                            </span>
+                            <input class="form-control" id="name" name="name" placeholder="* Enter Name" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="fa fa-envelope fa-fw"></i>
+                            </span>
+                            <input class="form-control" id="email" name="email" placeholder="* Enter Email" type="email">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Phone</label>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="fa fa-phone fa-fw"></i>
+                            </span>
+                            <input class="form-control" id="phone" name="phone" placeholder="Enter Phone Number" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" >Message</label>
+                    <div class="col-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="fa fa-comment fa-fw"></i>
+                            </span>
+                            <textarea class="form-control" id="message" name="message" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-2"></div>
+                    <div align="center" class="col-sm-10">
+                        <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+
+</section>
+
+<section id="contact" class="gray-section contact">
+    <div id="footer"></div>
+</section>
+
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/pace.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/cbpAnimatedHeader.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/inspinia.js"></script>
+</body>
+</html>
